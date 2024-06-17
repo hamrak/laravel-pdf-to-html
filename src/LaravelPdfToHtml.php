@@ -128,9 +128,9 @@ class LaravelPdfToHtml
 
         $fulltextCommand = array_merge(
             [$this->config->get('bin_path')],
+            $this->options->getAllOptions(),
             [$this->pdfFile],
-            [$resultFile],
-            $this->options->getAllOptions()
+            [$resultFile]
         );
 
         $process = new Process($fulltextCommand);
